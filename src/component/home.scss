@@ -13,6 +13,8 @@
    display: grid;
     grid-template:
             "box1 box2 box2 box3" 752fr;
+    grid-column-gap: px(28);
+    grid-row-gap: px(28);
     >.section1{
       border: 1px solid red;
       grid-area: box1;
