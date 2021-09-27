@@ -4,28 +4,86 @@
   flex: 1;
   display: flex;
   flex-direction: column;
+  background: #040e14;
   header {
     height: px(61);
     background-size: cover;
   }
   >main{
+    color: white;
+    padding-top: px(30);
     flex: 1;
    display: grid;
     grid-template:
-            "box1 box2 box2 box3" 752fr;
+            "box1 box4 box4 box5" 204fr
+            "box2 box4 box4 box6" 204fr
+            "box3 box4 box4 box7"  204fr / 349fr 349fr 349fr 349fr ;
     grid-column-gap: px(28);
     grid-row-gap: px(28);
+    .bordered{
+      border: 1px solid #0764bc;
+      position: relative;
+      box-shadow: 0 0 2px 0 #0f3361,inset 0 0 2px 0  #0f3361;
+      background: #0a2727;
+      &::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+       box-shadow:
+               21px 0 0 -20px #0f3361,
+               -21px 0 0 -20px #0f3361,
+               0 21px 0 -20px #0f3361,
+               0 -21px 0 -20px #0f3361,
+               11px 0 0 -10px #0d4483,
+               -11px 0 0 -10px #0d4483,
+               0 11px 0 -10px #0d4483,
+               0 -11px 0 -10px #0d4483,
+      ;
+
+      }
+    }
     >.section1{
-      border: 1px solid red;
       grid-area: box1;
     }
     >.section2{
-      border: 1px solid blue;
       grid-area: box2;
     }
     >.section3{
-      border: 1px solid mediumspringgreen;
       grid-area: box3;
     }
+    >.section4{
+      grid-area: box4;
+    }
+    >.section5{
+      grid-area: box5;
+    }
+    >.section6{
+      grid-area: box6;
+    }
+    >.section7{
+      grid-area: box7;
+    }
+    .案发{
+     height: px(256);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      h1{
+        flex-shrink: 0;
+        background: #0c171b;
+        border: 1px solid #0a5299;
+        font-size: px(22);
+        line-height: px(24);
+        text-shadow: 0 0 px(3) white;
+      }
+      .chart{
+        flex: 1;
+
+      }
+    }
   }
+
 }
