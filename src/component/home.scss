@@ -66,7 +66,7 @@
     >.section7{
       grid-area: box7;
     }
-    .案发,.时段,{
+    .案发,.时段,.访问{
      height: px(203);
       text-align: center;
       display: flex;
@@ -99,6 +99,18 @@
         width: 100%;
       }
     }
+    .访问{
+      .legend {
+        height: px(40); display: flex; align-items: center;
+        justify-content: center;
+        color: #6e7079;
+        > span {display: inline-block; width: px(40); height: px(15);
+          border-radius: px(4); margin: 0 px(10);}
+        .male {background: #33a4fa;}
+        .female {background: #8d70f8;}
+      }
+    }
+
   }
 
 }
