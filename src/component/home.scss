@@ -66,12 +66,12 @@
     >.section7{
       grid-area: box7;
     }
-    .案发{
-     height: px(256);
+    .案发,.时段{
+     height: px(203);
       text-align: center;
       display: flex;
       flex-direction: column;
-      h1{
+      >h1{
         flex-shrink: 0;
         background: #0c171b;
         border: 1px solid #0a5299;
@@ -81,7 +81,13 @@
       }
       .chart{
         flex: 1;
-
+        width: 100%;
+      }
+    }
+    .时段{
+      .chart2{
+        flex: 1;
+        width: 100%;
       }
     }
   }
