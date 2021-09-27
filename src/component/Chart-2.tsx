@@ -59,7 +59,7 @@ const Chart2=()=>{
     return(
         <div className="bordered 时段">
             <h1>案发时段分析</h1>
-            <div ref={ref} className='chart2'>
+            <div ref={ref} className='chart'>
 
             </div>
         </div>
