@@ -1,8 +1,29 @@
 @import "../style/helper";
 
 .home {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
   header {
     height: px(61);
     background-size: cover;
+  }
+  >main{
+    flex: 1;
+   display: grid;
+    grid-template:
+            "box1 box2 box2 box3" 752fr;
+    >.section1{
+      border: 1px solid red;
+      grid-area: box1;
+    }
+    >.section2{
+      border: 1px solid blue;
+      grid-area: box2;
+    }
+    >.section3{
+      border: 1px solid mediumspringgreen;
+      grid-area: box3;
+    }
   }
 }
