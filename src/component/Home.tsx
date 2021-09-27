@@ -1,15 +1,21 @@
 import React from 'react';
 import './home.scss'
-import headerBg from '../image/2.png'
 import Chart1 from './Chart-1';
 import Chart2 from './Chart-2';
 import Chart3 from './Chart-3';
 import Chart4 from './Chart-4';
+import Nav from './Nav';
+import Chart5 from './Chart-5';
+import Chart6 from './Chart-6';
+import Chart7 from './Chart-7';
+import Statistic from './statistic';
 const Home=()=>{
 
     return(
         <div className='home'>
-            <header style={{backgroundImage: `url(${headerBg})`}}/>
+            <header>
+              <Nav/>
+            </header>
             <main>
                 <section className='section1'>
                  <Chart1/>
@@ -21,12 +27,22 @@ const Home=()=>{
                     <Chart3/>
                 </section>
                 <section className='section4'>
+                    <Statistic/>
                     <Chart4/>
                 </section>
-                <section className='bordered section5'>5</section>
-                <section className='bordered section6'>6</section>
-                <section className='bordered section7'>7</section>
+                <section className=' section5'>
+                    <Chart5/>
+                </section>
+                <section className='section6'>
+                    <Chart6/>
+                </section>
+                <section className='section7'>
+                    <Chart7/>
+                </section>
             </main>
+            <footer>
+                <span>©Li 2021</span>
+            </footer>
         </div>
     )
 }

@@ -34,7 +34,7 @@ const Chart4=()=>{
         });
     },[])
     return(
-        <div className="bordered 地图">
+        <div className="地图">
             <div ref={ref} className='chart'>
             </div>
         </div>
