@@ -10,8 +10,9 @@
     color: white;
   }
   header {
-    background: #061119;
+    background: linear-gradient(90deg, rgba(8, 24, 35, 1) 0%, rgba(0, 0, 0, 0) 50%, rgba(8, 24, 35, 1) 100%);
     color: white;
+    text-shadow: 0 0 10px #1d393d, 0 0 20px #1d393d, 0 0 30px #1d393d, 0 0 40px #1d393d;
     .nav{
       height: px(61);
       display: flex;
@@ -20,6 +21,10 @@
       .font{
         font-size: px(30);
         text-shadow: 0 0 px(3) white;
+      }
+      >.clock{
+        padding: px(20);
+        color: #6d929d;
       }
     }
   }
@@ -79,7 +84,12 @@
           justify-content: center;
           width: px(186);
           height: px(94);
+          flex-direction: column;
+          >span{
+            font-size: 30px;
+          }
         }
+
       }
     }
     >.section5{
