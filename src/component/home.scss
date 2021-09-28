@@ -4,7 +4,7 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  background: #040e14;
+  background: rgba(0, 0, 0, 0.7);
   >footer{
    text-align: center;
     color: white;
@@ -26,9 +26,33 @@
         padding: px(20);
         color: #6d929d;
       }
+      >.navRight{
+        color: #6d929d;
+        >.wrapper{
+          display: flex;
+          justify-content: center;
+        align-items: center;
+          >.weizhi{
+            padding: 0 px(10);
+          }
+          >.tianqi{
+            padding: 0 px(10);
+            >span{
+              padding: 0 px(5);
+            }
+          }
+        }
+        .icon {
+          width: 1em; height: 1em;
+          vertical-align: -0.15em;
+          fill: #6d929d;;
+          overflow: hidden;
+        }
+      }
     }
   }
   >main{
+    padding: 0 20px;
     color: white;
     padding-top: px(30);
     flex: 1;
@@ -43,8 +67,9 @@
       border: 1px solid #0764bc;
       position: relative;
       box-shadow: 0 0 2px 0 #0f3361,inset 0 0 2px 0  #0f3361;
-      background: #0a2727;
+      background: rgba(31, 59, 70, 0.35);;
       &::before{
+        pointer-events: none;
         content: '';
         position: absolute;
         top: 0;
@@ -108,7 +133,7 @@
       flex-direction: column;
       >h1{
         flex-shrink: 0;
-        background: #0c171b;
+        background: rgba(31, 59, 70, 0.35);
         border: 1px solid #0a5299;
         font-size: px(22);
         line-height: px(24);

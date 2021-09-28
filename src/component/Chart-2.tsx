@@ -4,6 +4,7 @@ import * as echarts from 'echarts';
 const Chart2=()=>{
     const ref=useRef(null)
     const px=(n)=>n / 1502 * (window as any).pageWidth
+
     useEffect(()=>{
         let myChart = echarts.init(ref.current);
         myChart.setOption({
@@ -57,7 +58,7 @@ const Chart2=()=>{
 
     },[])
     return(
-        <div className="bordered 时段">
+        <div className="时段">
             <h1>案发时段分析</h1>
             <div ref={ref} className='chart'>
 

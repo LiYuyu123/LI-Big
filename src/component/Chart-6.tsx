@@ -2,8 +2,8 @@ import React, {useEffect, useRef} from 'react';
 import * as echarts from 'echarts';
 const Chart6=()=>{
     const ref=useRef(null)
+    const myChart=useRef(null)
     const px=(n)=>n / 1502 * (window as any).pageWidth
-    const colors = ['#F46064', '#F38E1C', '#1CDB7C', '#8D70F8', '#33A4FA'];
     const data = [
         {value: 0.12, name: '杭州'},
         {value: 0.06, name: '温州'},
@@ -12,8 +12,19 @@ const Chart6=()=>{
         {value: 0.08, name: '丽水'},
     ];
     useEffect(()=>{
-        let myChart = echarts.init(ref.current);
-        myChart.setOption({
+        setInterval(()=>{
+            const newData=[
+                {value: Math.floor(Math.random()*10), name: '杭州'},
+                {value: Math.floor(Math.random()*10), name: '温州'},
+                {value: Math.floor(Math.random()*10), name: '台州'},
+                {value: Math.floor(Math.random()*10), name: '舟山'},
+                {value: Math.floor(Math.random()*10), name: '丽水'},
+            ]
+            render(newData)
+        },1500)
+    },[])
+    const render=(data)=>{
+        myChart.current.setOption({
             xAxis: {show: false},
             yAxis: {show: false},
             grid: {x: 0, x2: 0, y: 0, y2: 0, containLabel: true},
@@ -26,7 +37,7 @@ const Chart6=()=>{
                 itemHeight: px(10),
                 formatter(name) {
                     // @ts-ignore
-                    const value = data.find(i => i.name === name)?.value * 100 + '%';
+                    const value = data.find(i => i.name === name)?.value+ '%';
                     return name + ' ' + value;
                 }
             },
@@ -48,9 +59,13 @@ const Chart6=()=>{
                 }
             ]
         });
+    }
+    useEffect(()=>{
+         myChart.current = echarts.init(ref.current);
+        render(data)
     },[])
     return(
-        <div className="bordered 街道">
+        <div className=" 街道">
             <h1>案发地级市统计</h1>
             <div ref={ref} className='chart'>
             </div>

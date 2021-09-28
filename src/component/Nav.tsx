@@ -9,7 +9,7 @@ const Nav=()=>{
                 <Clock/>
             </div>
             <div className='font'>国家公安合成作战平台</div>
-            <div>
+            <div className='navRight'>
                 <NavRight/>
             </div>
         </div>

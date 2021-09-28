@@ -66,7 +66,7 @@ const Chart7=()=>{
         });
     },[])
     return(
-        <div className="bordered 趋势">
+        <div className=" 趋势">
             <h1>案发趋势分析</h1>
             <div ref={ref} className='chart'>
             </div>

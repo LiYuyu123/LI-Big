@@ -41,7 +41,7 @@ const Chart5=()=>{
         });
     },[])
     return(
-        <div className="bordered 案件类型">
+        <div className=" 案件类型">
             <h1>案件类型统计</h1>
             <div ref={ref} className='chart'>
             </div>

@@ -37,7 +37,7 @@ const Chart3=()=>{
         });
     },[])
     return(
-        <div className="bordered 访问">
+        <div className="访问">
             <h1>访问来源</h1>
             <div ref={ref} className='chart'>
 

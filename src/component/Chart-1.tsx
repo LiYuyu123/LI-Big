@@ -3,14 +3,36 @@ import * as echarts from 'echarts';
 
 const Chart1=()=>{
     const ref=useRef(null)
+    const myChart=useRef(null)
     const px=(n)=>n / 1502 * (window as any).pageWidth
+    const data=[
+        {name:'浙江省',value:5},
+        {name:'河北省',value:10},
+        {name:'辽宁省',value:15},
+        {name:'安徽省',value:20},
+        {name:'江苏省',value:25},
+        {name:'广东省',value:30},
+    ]
     useEffect(()=>{
-        let myChart = echarts.init(ref.current);
-        myChart.setOption({
+        setInterval(()=>{
+            const newData=[
+                {name:'浙江省',value:Math.random()*10},
+                {name:'河北省',value:Math.random()*10},
+                {name:'辽宁省',value:Math.random()*10},
+                {name:'安徽省',value:Math.random()*10},
+                {name:'江苏省',value:Math.random()*10},
+                {name:'广东省',value:Math.random()*10},
+            ]
+            render(newData)
+        },1500)
+    },[])
+    const render=(data)=>{
+        myChart.current.setOption({
 
             tooltip: {},
             xAxis: {
-                data: ['浙江省', '河北省', '辽宁省', '安徽省', '江苏省', '广东省'],
+                // @ts-ignore
+                data:data.map(i=>i.name),
                 axisTick:{show:false},
                 axisLabel:{
                     fontSize:px(12),
@@ -42,14 +64,18 @@ const Chart1=()=>{
                 {
                     name: '0',
                     type: 'bar',
-                    data: [5,10,15,20,25,30],
+                    data: data.map(i=>i.value),
                     itemStyle: {color:'#3aa6e9'}
                 }
             ]
         });
+    }
+    useEffect(()=>{
+         myChart.current = echarts.init(ref.current);
+        render(data)
     },[])
     return(
-        <div className="bordered 案发">
+        <div className="案发">
             <h1>案发派出所管辖统计</h1>
             <div ref={ref} className='chart'>
 
